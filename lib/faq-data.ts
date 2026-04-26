@@ -5,7 +5,7 @@ export const FAQ_DATA = [
   },
   {
     q: 'Combien coûte une recherche de fuite ?',
-    a: "Le tarif dépend de la complexité, en général entre 250 € et 600 € TTC. Le devis est gratuit. Si votre assurance multirisque habitation prend en charge la recherche de fuite (convention CIDRE / IRSI), nous établissons un dossier directement avec elle.",
+    a: "Le tarif dépend de la complexité, à partir de 450 € HT. Le devis est gratuit. Si votre assurance multirisque habitation prend en charge la recherche de fuite (convention CIDRE / IRSI), nous établissons un dossier directement avec elle.",
   },
   {
     q: 'Mon assurance prend-elle en charge la recherche de fuite ?',
@@ -13,7 +13,7 @@ export const FAQ_DATA = [
   },
   {
     q: 'Quel est le délai d’intervention ?',
-    a: 'Nous intervenons sous 1 h en urgence en Île-de-France (départements 75, 92, 78, 95, 93, 94). Pour une intervention planifiée, comptez 24 à 48 h.',
+    a: 'Nous intervenons très rapidement en urgence en Île-de-France (départements 75, 92, 78, 95, 93, 94). Pour une intervention planifiée, comptez 24 à 48 h.',
   },
   {
     q: 'Quelles sont vos zones d’intervention ?',
