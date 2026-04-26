@@ -77,7 +77,7 @@ export default function HomePage() {
             <span className="eyebrow">Couverture géographique</span>
             <h2 className="h2 mt-2">Une intervention partout en Île-de-France</h2>
             <p className="mt-3 text-slate-600">
-              Basés à <strong>Rueil-Malmaison (92)</strong>, nous intervenons sur tout l&apos;Île-de-France en moins d&apos;1 h.
+              Basés à <strong>Rueil-Malmaison (92)</strong>, nous intervenons très rapidement sur tout l&apos;Île-de-France.
             </p>
           </div>
           <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-3 max-w-5xl mx-auto">
