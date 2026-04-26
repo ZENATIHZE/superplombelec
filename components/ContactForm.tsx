@@ -8,9 +8,12 @@ export default function ContactForm() {
 
   async function onSubmit(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault();
+    // On capture la référence du form AVANT tout await — sinon e.currentTarget
+    // peut être null après la réponse (React recycle l'événement).
+    const form = e.currentTarget;
     setStatus('sending');
     setErrorMsg('');
-    const data = Object.fromEntries(new FormData(e.currentTarget) as any);
+    const data = Object.fromEntries(new FormData(form) as any);
     try {
       const res = await fetch('/api/contact', {
         method: 'POST',
@@ -21,14 +24,14 @@ export default function ContactForm() {
       if (!res.ok) {
         throw new Error(json?.error || `HTTP ${res.status}`);
       }
-      setStatus('sent');
       // Conversion Google Ads
       if (typeof window !== 'undefined' && (window as any).gtag) {
         (window as any).gtag('event', 'conversion', {
           send_to: `${SITE.googleAdsId}/${SITE.googleAdsConversionLabel}`,
         });
       }
-      e.currentTarget.reset();
+      form?.reset();
+      setStatus('sent');
     } catch (err: any) {
       setErrorMsg(err?.message || 'Erreur inconnue');
       setStatus('error');
