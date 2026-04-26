@@ -1,0 +1,6 @@
+# Géré dynamiquement par app/robots.ts — ce fichier est en doublon de secours
+User-agent: *
+Allow: /
+Disallow: /api/
+
+Sitemap: https://www.superplombelec.fr/sitemap.xml

@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" role="img" aria-label="Super Plomb Elec">
+  <title>Super Plomb Elec</title>
+  <!-- Cordon jaune -->
+  <path d="M 145 35 Q 195 80 175 130 Q 155 180 90 180 Q 30 180 25 140"
+        fill="none" stroke="#F2C203" stroke-width="14" stroke-linecap="round"/>
+  <!-- Prise -->
+  <g transform="translate(125,15)">
+    <rect x="0" y="0" width="32" height="28" rx="6" fill="#F2C203"/>
+    <rect x="0" y="-10" width="6" height="14" rx="2" fill="#F2C203"/>
+    <rect x="14" y="-10" width="6" height="14" rx="2" fill="#F2C203"/>
+  </g>
+  <!-- Goutte bleue -->
+  <path d="M 95 30 Q 60 80 50 125 Q 45 165 95 165 Q 145 165 140 125 Q 130 80 95 30 Z"
+        fill="none" stroke="#3D9FD4" stroke-width="12" stroke-linejoin="round"/>
+</svg>
