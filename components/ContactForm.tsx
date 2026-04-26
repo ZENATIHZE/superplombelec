@@ -4,10 +4,12 @@ import { SITE } from '@/lib/site';
 
 export default function ContactForm() {
   const [status, setStatus] = useState<'idle' | 'sending' | 'sent' | 'error'>('idle');
+  const [errorMsg, setErrorMsg] = useState<string>('');
 
   async function onSubmit(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault();
     setStatus('sending');
+    setErrorMsg('');
     const data = Object.fromEntries(new FormData(e.currentTarget) as any);
     try {
       const res = await fetch('/api/contact', {
@@ -15,7 +17,10 @@ export default function ContactForm() {
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(data),
       });
-      if (!res.ok) throw new Error('Send failed');
+      const json = await res.json().catch(() => ({}));
+      if (!res.ok) {
+        throw new Error(json?.error || `HTTP ${res.status}`);
+      }
       setStatus('sent');
       // Conversion Google Ads
       if (typeof window !== 'undefined' && (window as any).gtag) {
@@ -24,7 +29,8 @@ export default function ContactForm() {
         });
       }
       e.currentTarget.reset();
-    } catch {
+    } catch (err: any) {
+      setErrorMsg(err?.message || 'Erreur inconnue');
       setStatus('error');
     }
   }
@@ -62,11 +68,20 @@ export default function ContactForm() {
         ]} required />
       <Field name="urgency" label="Urgence" as="select"
         options={[
-          { v: 'urgent', l: '🔴 Urgent (intervention sous 1 h)' },
+          { v: 'urgent', l: '🔴 Urgent (intervention très rapide)' },
           { v: 'today', l: '🟠 Aujourd\'hui ou demain' },
           { v: 'planned', l: '🟢 Planifié (sous 7 jours)' },
         ]} required />
       <Field name="message" label="Décrivez votre situation" as="textarea" />
+      {/* Honeypot anti-bot */}
+      <input
+        type="text"
+        name="honeypot"
+        tabIndex={-1}
+        autoComplete="off"
+        aria-hidden="true"
+        style={{ position: 'absolute', left: '-10000px', width: '1px', height: '1px', opacity: 0 }}
+      />
       <label className="flex items-start gap-2 text-sm text-slate-600">
         <input type="checkbox" name="rgpd" required className="mt-1" />
         <span>J&apos;accepte que mes données soient utilisées pour me recontacter (RGPD).</span>
@@ -80,7 +95,10 @@ export default function ContactForm() {
         {status === 'sending' ? 'Envoi en cours…' : 'Envoyer ma demande de devis'}
       </button>
       {status === 'error' && (
-        <p className="text-sm text-red-600">Erreur lors de l&apos;envoi. Appelez-nous directement au {SITE.phone}.</p>
+        <p className="text-sm text-red-600">
+          Erreur lors de l&apos;envoi{errorMsg ? ` : ${errorMsg}` : ''}. Appelez-nous directement au{' '}
+          <a className="font-bold underline" href={`tel:${SITE.phoneE164}`}>{SITE.phone}</a>.
+        </p>
       )}
       <p className="text-xs text-slate-500 text-center">
         Réponse garantie sous 24 h ouvrées · Devis gratuit · Sans engagement
