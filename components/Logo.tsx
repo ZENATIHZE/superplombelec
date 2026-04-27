@@ -4,12 +4,12 @@ type Props = {
   priority?: boolean;
 };
 
-// Pour mettre votre logo :
-// 1. Placez votre fichier dans /public/logo.png (ou .svg, .webp)
-// 2. Si le nom diffère, modifiez `src` ci-dessous
+// Le composant utilise une balise <img> standard pour respecter automatiquement
+// le ratio natif du fichier, sans le forcer.
 //
-// On utilise <img> standard plutôt que <Image> de next/image pour préserver
-// automatiquement le ratio natif du fichier — sans avoir à le déclarer en dur.
+// Pour utiliser le PNG à la place du SVG :
+// 1. Place ton fichier PNG dans /public/logo.png
+// 2. Remplace `src="/logo.svg"` ci-dessous par `src="/logo.png"`
 export default function Logo({ className = '', variant = 'full', priority = false }: Props) {
   if (variant === 'mark') {
     return (
@@ -26,7 +26,7 @@ export default function Logo({ className = '', variant = 'full', priority = fals
   return (
     // eslint-disable-next-line @next/next/no-img-element
     <img
-      src="/logo.png"
+      src="/logo.svg"
       alt="Super Plomb Elec — Recherche de fuite non destructive"
       className={className}
       loading={priority ? 'eager' : 'lazy'}
