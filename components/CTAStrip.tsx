@@ -6,7 +6,7 @@ export default function CTAStrip({ variant = 'default' }: { variant?: 'default' 
     return (
       <div className="bg-accent-500 text-brand-800">
         <div className="container-px py-5 flex flex-col sm:flex-row items-center justify-between gap-4">
-          <p className="font-bold text-lg">Une fuite ? Un doute ? On intervient sous 1 h.</p>
+          <p className="font-bold text-lg">Une fuite ? Un doute ? On intervient rapidement.</p>
           <a href={`tel:${SITE.phoneE164}`} className="btn-dark" data-track="strip-call">Appeler {SITE.phone}</a>
         </div>
       </div>
@@ -26,7 +26,7 @@ export default function CTAStrip({ variant = 'default' }: { variant?: 'default' 
           Devis gratuit en moins de <span className="text-accent-400">24 heures</span>
         </h2>
         <p className="mt-4 text-brand-100 max-w-2xl mx-auto">
-          Décrivez-nous votre situation : on vous rappelle dans la journée et on intervient sous 1 h en urgence.
+          Décrivez-nous votre situation : on vous rappelle dans la journée et on intervient rapidement en urgence.
         </p>
         <div className="mt-8 flex flex-col sm:flex-row gap-3 justify-center">
           <a href={`tel:${SITE.phoneE164}`} className="btn-primary text-lg" data-track="cta-call">
