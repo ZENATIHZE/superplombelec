@@ -8,7 +8,7 @@ import { breadcrumbJsonLd } from '@/lib/jsonld';
 export const metadata: Metadata = {
   title: "Zones d'intervention — Île-de-France",
   description:
-    "Recherche de fuite non destructive dans toute l'Île-de-France : Paris (75), Hauts-de-Seine (92), Yvelines (78), Val-d'Oise (95), Seine-Saint-Denis (93), Val-de-Marne (94). Intervention sous 1 h.",
+    "Recherche de fuite non destructive dans toute l'Île-de-France : Paris (75), Hauts-de-Seine (92), Yvelines (78), Val-d'Oise (95), Seine-Saint-Denis (93), Val-de-Marne (94). Intervention rapide.",
   alternates: { canonical: '/zones' },
 };
 
