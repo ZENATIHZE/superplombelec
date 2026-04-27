@@ -161,7 +161,7 @@ export default function Page() {
 
         <div className="mt-12 p-6 bg-brand-50 border border-brand-200 rounded-2xl">
           <h2 className="font-bold text-brand-700 text-lg mb-2">Une fuite à diagnostiquer ?</h2>
-          <p className="text-slate-700 mb-4">Devis gratuit, méthode adaptée à votre situation, intervention sous 1 h en IDF.</p>
+          <p className="text-slate-700 mb-4">Devis gratuit, méthode adaptée à votre situation, intervention rapide en IDF.</p>
           <div className="flex flex-col sm:flex-row gap-3">
             <a href={`tel:${SITE.phoneE164}`} className="btn-primary">📞 {SITE.phone}</a>
             <Link href="/contact" className="btn-secondary">Demander un devis</Link>
