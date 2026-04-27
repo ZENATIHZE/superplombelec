@@ -7,7 +7,7 @@ import { breadcrumbJsonLd } from '@/lib/jsonld';
 export const metadata: Metadata = {
   title: 'Contact & devis gratuit',
   description:
-    'Demandez un devis gratuit pour une recherche de fuite non destructive en Île-de-France. Réponse sous 24 h. Intervention sous 1 h en urgence.',
+    'Demandez un devis gratuit pour une recherche de fuite non destructive en Île-de-France. Réponse sous 24 h. Intervention rapide en urgence.',
   alternates: { canonical: '/contact' },
 };
 
@@ -37,7 +37,7 @@ export default function ContactPage() {
           <aside className="space-y-6">
             <div className="bg-accent-500 text-brand-800 rounded-2xl p-6">
               <h2 className="font-bold text-xl mb-2">🔴 Urgence ?</h2>
-              <p className="text-sm mb-4">Intervention sous 1 h en Île-de-France, 7 j/7.</p>
+              <p className="text-sm mb-4">Intervention rapide en Île-de-France, 7 j/7.</p>
               <a href={`tel:${SITE.phoneE164}`} className="block bg-brand-700 text-white font-bold text-center py-3 rounded-lg text-lg" data-track="contact-call">
                 📞 {SITE.phone}
               </a>
