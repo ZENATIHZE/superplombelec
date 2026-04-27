@@ -1,39 +1,36 @@
-import Image from 'next/image';
-
 type Props = {
   className?: string;
   variant?: 'full' | 'mark';
   priority?: boolean;
 };
 
-// Le SVG du logo a une aspect ratio 480:320 (3:2). Pour respecter les proportions
-// dans toute la maquette, on passe width/height correspondants et `w-auto h-…` côté CSS.
+// Pour mettre votre logo :
+// 1. Placez votre fichier dans /public/logo.png (ou .svg, .webp)
+// 2. Si le nom diffère, modifiez `src` ci-dessous
 //
-// Pour utiliser votre fichier logo original (PNG haute résolution) :
-// 1. Placez votre fichier dans /public/logo.png
-// 2. Remplacez `src="/logo.svg"` par `src="/logo.png"` ci-dessous
-// 3. Ajustez width/height selon les dimensions exactes de votre PNG
+// On utilise <img> standard plutôt que <Image> de next/image pour préserver
+// automatiquement le ratio natif du fichier — sans avoir à le déclarer en dur.
 export default function Logo({ className = '', variant = 'full', priority = false }: Props) {
   if (variant === 'mark') {
     return (
-      <Image
+      // eslint-disable-next-line @next/next/no-img-element
+      <img
         src="/logo-mark.svg"
         alt="Super Plomb Elec"
-        width={48}
-        height={48}
-        priority={priority}
         className={className}
+        loading={priority ? 'eager' : 'lazy'}
+        decoding="async"
       />
     );
   }
   return (
-    <Image
-      src="/logo.svg"
+    // eslint-disable-next-line @next/next/no-img-element
+    <img
+      src="/logo.png"
       alt="Super Plomb Elec — Recherche de fuite non destructive"
-      width={240}
-      height={160}
-      priority={priority}
       className={className}
+      loading={priority ? 'eager' : 'lazy'}
+      decoding="async"
     />
   );
 }
