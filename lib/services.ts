@@ -56,24 +56,25 @@ export const METHODS: Method[] = [
     ],
   },
   {
-    slug: 'correlateur-acoustique',
-    title: 'Corrélateur acoustique',
+    slug: 'generateur-de-fumee',
+    title: 'Générateur de fumée',
     shortDescription:
-      "Localisation précise par analyse du bruit de la fuite captée en deux points.",
+      "Une fumée non toxique, dense et visible révèle les fuites d'air et d'étanchéité.",
     description:
-      "Le corrélateur acoustique mesure le décalage temporel entre le bruit de la fuite capté en deux points distincts du réseau (vannes, regards, compteurs). Un calcul de corrélation croisée donne la position exacte de la fuite, au centimètre près, même sur des canalisations enterrées sous chaussée ou sous dalle.",
+      "Le générateur de fumée injecte une fumée non toxique, dense et visible dans la canalisation, le conduit ou la zone suspecte. Là où la fumée s'échappe, c'est qu'il y a une fuite : joint défectueux, fissure, défaut d'étanchéité. Méthode très efficace pour identifier rapidement les fuites d'air, les défauts de VMC, les canalisations d'évacuation et les infiltrations en toiture-terrasse. Aucun résidu, aucun danger pour les occupants.",
     whenToUse:
-      "Idéal pour : fuites sur réseaux pression (eau de ville), canalisations enterrées, longues distances entre deux points d'accès.",
+      "Idéal pour : canalisations d'évacuation (EU/EV), VMC, défauts d'étanchéité de toiture-terrasse, conduits de fumée, recherche de fuites d'air.",
     keywords: [
-      'corrélateur acoustique fuite',
-      'détection acoustique canalisation',
-      'recherche fuite réseau enterré',
+      'générateur de fumée fuite',
+      'détection fuite par fumée',
+      'recherche fuite étanchéité',
+      'test fumigène canalisation',
     ],
     benefits: [
-      'Précision centimétrique',
-      'Idéal canalisations enterrées',
-      'Longues distances couvertes',
-      'Sans intervention sur le réseau',
+      'Visualisation immédiate',
+      'Fumée non toxique',
+      'Idéal évacuations & VMC',
+      'Sans résidu ni nettoyage',
     ],
   },
   {
@@ -82,9 +83,9 @@ export const METHODS: Method[] = [
     shortDescription:
       "Amplification du bruit caractéristique d'une fuite sous pression, à l'aide d'un casque et d'une sonde.",
     description:
-      "Les fuites sous pression émettent un bruit caractéristique audible avec un équipement amplificateur. Nous parcourons la zone suspecte avec une sonde au sol et un casque haute sensibilité pour repérer le point précis où le bruit est maximal. Technique complémentaire au corrélateur, idéale pour les zones courtes et les recherches en intérieur.",
+      "Les fuites sous pression émettent un bruit caractéristique audible avec un équipement amplificateur. Nous parcourons la zone suspecte avec une sonde au sol et un casque haute sensibilité pour repérer le point précis où le bruit est maximal. Technique idéale pour les zones courtes et les recherches en intérieur.",
     whenToUse:
-      "Idéal pour : recherche en intérieur, salles de bain, cuisines, vide-sanitaires, complément du corrélateur sur courtes distances.",
+      "Idéal pour : recherche en intérieur, salles de bain, cuisines, vide-sanitaires, fuites sous pression sur courtes distances.",
     keywords: [
       'détection électroacoustique fuite',
       'recherche fuite sonde acoustique',
@@ -94,7 +95,7 @@ export const METHODS: Method[] = [
       'Idéal en intérieur',
       'Rapide à mettre en œuvre',
       'Précis sur zones courtes',
-      'Complémentaire au corrélateur',
+      'Adapté aux fuites sous pression',
     ],
   },
   {
